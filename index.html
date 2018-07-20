@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Machine</title>
+  </head>
+  <body style="background-color:#0f9b0f" class="p-3 mb-2 bg-success text-white">
+      <div class="container" style="padding:0 100px 0 100px">
+
+      <!---SIMPLE INTEREST--->
+      <label id="simpleLabel"  role="progressbar" style="width: 20%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></label>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+          <input class="form-control mr-sm-2" id="simpleInput" type="text" placeholder="Simple Interest" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="simpleBtn"></button>
+        </div>
+      </nav>
+      <div id="simpleResult" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+
+     <!---COMPOUND INTEREST--->
+      <label id="compoundLabel"  role="progressbar" style="width: 20%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></label>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+          <input class="form-control mr-sm-2" id="compoundInput" type="text" placeholder="Compound Interest" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="compoundBtn"></button>
+        </div>
+      </nav>
+      <div id="compoundResult" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+
+      <!---FACTORIAL MACHINE--->
+      <h6>Factorial</h6>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+        <input  type="text" id="facInput" class="form-control mr-sm-2"  placeholder="Factorial" aria-label="Search"/>
+          <button id="facBtn" class="btn btn-outline-success my-2 my-sm-0" onclick="getNumber()" >Strike</button>
+        </div>
+      </nav>
+      <div id="facResult" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+
+      <!---PERMUTAION  MACHINE--->
+      <h6>Permutation</p>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+        <input  type="text" id="nPerm" class="form-control mr-sm-2"  placeholder="value of n"/>
+        <input  type="text" id="rPerm" class="form-control mr-sm-2"  placeholder="value of r"/>
+          <button class="btn btn-outline-success my-2 my-sm-0"  onclick="permutationFunction()">Strike</button>
+        </div>
+      </nav>
+      <div id="permResult" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+
+      <!---COMBINATION  MACHINE--->
+      <h6>Combination</p>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+        <input  type="text" id="nComb" class="form-control mr-sm-2"  placeholder="value of n"/>
+        <input  type="text" id="rComb" class="form-control mr-sm-2"  placeholder="value of r"/>
+          <button class="btn btn-outline-success my-2 my-sm-0"  onclick="combinationFunction()">Strike</button>
+        </div>
+      </nav>
+      <div id="combResult" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+
+      <!---ALMIGHTY FORMULA--->
+      <h6>Formula Method For Quadratic Equation</p>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+          <input  type="text" id="valueOfA" class="form-control mr-sm-2"  placeholder="value of a"/>
+          <input  type="text" id="valueOfB" class="form-control mr-sm-2"  placeholder="value of b"/>
+          <input  type="text" id="valueOfC" class="form-control mr-sm-2"  placeholder="value of c"/>
+          <button class="btn btn-outline-success my-2 my-sm-0"  onclick="formulaMethod()">Strike</button>
+        </div>
+      </nav>
+      <div id="FormularMethodResult" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+      <!---PRIME NUMBER MACHINE--->
+      <h6>Prime Number Compiler</p>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+          <input class="form-control mr-sm-2" id="primeInput" type="text" placeholder="Prime Number" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="primeBtn">Check</button>
+        </div>
+      </nav>
+      <div id="primeResult" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+
+      <!---DECIMAL TO HEXADECIMAL MACHINE--->
+      <h6>Decimal To Hexadecimal Converter</p>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+          <input class="form-control mr-sm-2" id="decHexInput" type="text" placeholder="Decimal To Hex" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="decHexBtn" type="submit">Check</button>
+        </div>
+      </nav>
+      <div id="decHexResult" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+
+      <!---DECIMAL TO BINARY MACHINE--->
+      <h6>Decimal To Binary Converter</p>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+          <input class="form-control mr-sm-2" id="decBinInput" type="text" placeholder="Decimal To Binary" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="decBinBtn" type="submit">Check</button>
+        </div>
+      </nav>
+      <div id="decBinResult" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+
+      <!---FIBONACCI SERIES MACHINE--->
+      <h6>Fibonacci Generator</p>
+      <nav class="navbar navbar-light bg-light">
+        <div class="form-inline">
+          <input id="fiboInput" class="form-control mr-sm-2" type="text" placeholder="Fibonacci Series" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="fibonacciGenerator()">Check</button>
+        </div>
+      </nav>
+      <div id="resultFibo" class="progress-bar bg-info" style="width: 20%" style="color:#fff; font-size: 15px;"></div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
